@@ -60,9 +60,20 @@ namespace LogicSolver
             writer = File.CreateText("input.mpl");
             writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
             writer.WriteLine("march('open', packageDir):");
-
-            // write input
-
+            writer.WriteLine("with(Logic);");
+            switch (type)
+            {
+                case 0: // rut gon bieu thuc logic
+                    writer.WriteLine("P := " + input + ";");
+                    writer.WriteLine("ExportResult(P, BooleanSimplify(P), SimplifyLogicExpression(P));");
+                    break;
+                case 1: // kiem chung suy luan
+                    input += inputTextBox2.Text;
+                    break;
+                case 2: // rut gon ham bool
+                    input += inputTextBox3.Text;
+                    break;
+            }
             writer.Close();
 
             ProcessStartInfo processInfo = new ProcessStartInfo();
@@ -175,10 +186,13 @@ namespace LogicSolver
             switch (tabControl.SelectedIndex)
             {
                 case 0: // rut gon bieu thuc logic
+                    input += inputTextBox1.Text;
                     break;
                 case 1: // kiem chung suy luan
+                    input += inputTextBox2.Text;
                     break;
                 case 2: // rut gon ham bool
+                    input += inputTextBox3.Text;
                     break;
             }
             string text = Solve(input, tabControl.SelectedIndex);

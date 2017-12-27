@@ -63,11 +63,11 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(46, 67);
+            this.tabControl.Location = new System.Drawing.Point(69, 64);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(879, 113);
+            this.tabControl.Size = new System.Drawing.Size(817, 113);
             this.tabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -108,7 +108,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(871, 75);
+            this.tabPage2.Size = new System.Drawing.Size(809, 75);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kiểm chứng suy luận";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             // 
             this.inputTextBox2.Location = new System.Drawing.Point(103, 24);
             this.inputTextBox2.Name = "inputTextBox2";
-            this.inputTextBox2.Size = new System.Drawing.Size(659, 30);
+            this.inputTextBox2.Size = new System.Drawing.Size(656, 30);
             this.inputTextBox2.TabIndex = 10;
             this.inputTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
             // 
@@ -161,7 +161,7 @@
             // 
             // pageLabel
             // 
-            this.pageLabel.Location = new System.Drawing.Point(829, 318);
+            this.pageLabel.Location = new System.Drawing.Point(779, 338);
             this.pageLabel.Name = "pageLabel";
             this.pageLabel.Size = new System.Drawing.Size(87, 36);
             this.pageLabel.TabIndex = 8;
@@ -170,7 +170,7 @@
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(878, 357);
+            this.nextButton.Location = new System.Drawing.Point(828, 377);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(43, 41);
             this.nextButton.TabIndex = 7;
@@ -180,7 +180,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(829, 278);
+            this.label4.Location = new System.Drawing.Point(779, 298);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 28);
             this.label4.TabIndex = 6;
@@ -189,7 +189,7 @@
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(829, 357);
+            this.prevButton.Location = new System.Drawing.Point(779, 377);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(43, 41);
             this.prevButton.TabIndex = 5;
@@ -199,27 +199,32 @@
             // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(824, 194);
+            this.solveButton.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.solveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solveButton.ForeColor = System.Drawing.Color.White;
+            this.solveButton.Location = new System.Drawing.Point(775, 196);
             this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(97, 45);
+            this.solveButton.Size = new System.Drawing.Size(107, 75);
             this.solveButton.TabIndex = 4;
             this.solveButton.Text = "Tính";
-            this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.UseVisualStyleBackColor = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
             // pictureBox
             // 
+            this.pictureBox.BackColor = System.Drawing.Color.White;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(154, 194);
+            this.pictureBox.Location = new System.Drawing.Point(180, 184);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(659, 351);
+            this.pictureBox.Size = new System.Drawing.Size(576, 456);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 3;
             this.pictureBox.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 194);
+            this.label2.Location = new System.Drawing.Point(72, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 2;
@@ -277,7 +282,7 @@
             // waitingLabel
             // 
             this.waitingLabel.AutoSize = true;
-            this.waitingLabel.Location = new System.Drawing.Point(37, 235);
+            this.waitingLabel.Location = new System.Drawing.Point(64, 246);
             this.waitingLabel.Name = "waitingLabel";
             this.waitingLabel.Size = new System.Drawing.Size(110, 25);
             this.waitingLabel.TabIndex = 9;
@@ -289,7 +294,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(979, 571);
+            this.ClientSize = new System.Drawing.Size(979, 652);
             this.Controls.Add(this.waitingLabel);
             this.Controls.Add(this.solveButton);
             this.Controls.Add(this.pageLabel);
