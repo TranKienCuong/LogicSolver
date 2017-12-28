@@ -68,7 +68,10 @@ namespace LogicSolver
                     writer.WriteLine("ExportResult(P, BooleanSimplify(P), SimplifyLogicExpression(P));");
                     break;
                 case 1: // kiem chung suy luan
-                    input += inputTextBox2.Text;
+                    String[] strs = input.Split(new string[] { "SPLIT" }, StringSplitOptions.None);
+                    writer.WriteLine("P := " + strs[0] + " ;");
+                    writer.WriteLine("Q := " + strs[1] + " ;");
+                    writer.WriteLine("ExportResult2(P, Q, Implies(P, Q));");
                     break;
                 case 2: // rut gon ham bool
                     input += inputTextBox3.Text;
@@ -189,7 +192,9 @@ namespace LogicSolver
                     input += inputTextBox1.Text;
                     break;
                 case 1: // kiem chung suy luan
-                    input += inputTextBox2.Text;
+                    input += inputTextBox2a.Text;
+                    input += "SPLIT";
+                    input += inputTextBox2b.Text;
                     break;
                 case 2: // rut gon ham bool
                     input += inputTextBox3.Text;

@@ -33,7 +33,7 @@
             this.inputTextBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.inputTextBox2 = new System.Windows.Forms.TextBox();
+            this.inputTextBox2a = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.inputTextBox3 = new System.Windows.Forms.TextBox();
@@ -51,6 +51,9 @@
             this.notButton = new System.Windows.Forms.Button();
             this.impliesButton = new System.Windows.Forms.Button();
             this.waitingLabel = new System.Windows.Forms.Label();
+            this.inputTextBox2b = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -63,11 +66,11 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(69, 64);
+            this.tabControl.Location = new System.Drawing.Point(49, 64);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(817, 113);
+            this.tabControl.Size = new System.Drawing.Size(858, 150);
             this.tabControl.TabIndex = 0;
             // 
             // tabPage1
@@ -78,7 +81,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(871, 75);
+            this.tabPage1.Size = new System.Drawing.Size(850, 112);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rút gọn biểu thức logic";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -102,29 +105,32 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.inputTextBox2);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.inputTextBox2b);
+            this.tabPage2.Controls.Add(this.inputTextBox2a);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(809, 75);
+            this.tabPage2.Size = new System.Drawing.Size(850, 112);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kiểm chứng suy luận";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // inputTextBox2
+            // inputTextBox2a
             // 
-            this.inputTextBox2.Location = new System.Drawing.Point(103, 24);
-            this.inputTextBox2.Name = "inputTextBox2";
-            this.inputTextBox2.Size = new System.Drawing.Size(656, 30);
-            this.inputTextBox2.TabIndex = 10;
-            this.inputTextBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.inputTextBox2a.Location = new System.Drawing.Point(173, 19);
+            this.inputTextBox2a.Name = "inputTextBox2a";
+            this.inputTextBox2a.Size = new System.Drawing.Size(656, 30);
+            this.inputTextBox2a.TabIndex = 10;
+            this.inputTextBox2a.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 24);
+            this.label8.Location = new System.Drawing.Point(3, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 9;
@@ -137,7 +143,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(871, 75);
+            this.tabPage3.Size = new System.Drawing.Size(809, 75);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rút gọn hàm bool";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -161,7 +167,7 @@
             // 
             // pageLabel
             // 
-            this.pageLabel.Location = new System.Drawing.Point(779, 338);
+            this.pageLabel.Location = new System.Drawing.Point(779, 375);
             this.pageLabel.Name = "pageLabel";
             this.pageLabel.Size = new System.Drawing.Size(87, 36);
             this.pageLabel.TabIndex = 8;
@@ -170,7 +176,7 @@
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(828, 377);
+            this.nextButton.Location = new System.Drawing.Point(828, 414);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(43, 41);
             this.nextButton.TabIndex = 7;
@@ -180,7 +186,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(779, 298);
+            this.label4.Location = new System.Drawing.Point(779, 335);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 28);
             this.label4.TabIndex = 6;
@@ -189,7 +195,7 @@
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(779, 377);
+            this.prevButton.Location = new System.Drawing.Point(779, 414);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(43, 41);
             this.prevButton.TabIndex = 5;
@@ -202,7 +208,7 @@
             this.solveButton.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.solveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveButton.ForeColor = System.Drawing.Color.White;
-            this.solveButton.Location = new System.Drawing.Point(775, 196);
+            this.solveButton.Location = new System.Drawing.Point(775, 233);
             this.solveButton.Name = "solveButton";
             this.solveButton.Size = new System.Drawing.Size(107, 75);
             this.solveButton.TabIndex = 4;
@@ -214,7 +220,7 @@
             // 
             this.pictureBox.BackColor = System.Drawing.Color.White;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(180, 184);
+            this.pictureBox.Location = new System.Drawing.Point(180, 221);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(576, 456);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -224,7 +230,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 207);
+            this.label2.Location = new System.Drawing.Point(72, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 2;
@@ -282,19 +288,44 @@
             // waitingLabel
             // 
             this.waitingLabel.AutoSize = true;
-            this.waitingLabel.Location = new System.Drawing.Point(64, 246);
+            this.waitingLabel.Location = new System.Drawing.Point(64, 283);
             this.waitingLabel.Name = "waitingLabel";
             this.waitingLabel.Size = new System.Drawing.Size(110, 25);
             this.waitingLabel.TabIndex = 9;
             this.waitingLabel.Text = "Đang tính...";
             this.waitingLabel.Visible = false;
             // 
+            // inputTextBox2b
+            // 
+            this.inputTextBox2b.Location = new System.Drawing.Point(173, 64);
+            this.inputTextBox2b.Name = "inputTextBox2b";
+            this.inputTextBox2b.Size = new System.Drawing.Size(656, 30);
+            this.inputTextBox2b.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(84, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Giả thiết:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(77, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 25);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Kết luận:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(979, 652);
+            this.ClientSize = new System.Drawing.Size(979, 692);
             this.Controls.Add(this.waitingLabel);
             this.Controls.Add(this.solveButton);
             this.Controls.Add(this.pageLabel);
@@ -348,10 +379,13 @@
         private System.Windows.Forms.Button prevButton;
         private System.Windows.Forms.Button solveButton;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.TextBox inputTextBox2;
+        private System.Windows.Forms.TextBox inputTextBox2a;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox inputTextBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label waitingLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox inputTextBox2b;
     }
 }
