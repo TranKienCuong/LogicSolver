@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogicSolver
@@ -68,10 +61,18 @@ namespace LogicSolver
                     writer.WriteLine("ExportResult(P, BooleanSimplify(P), SimplifyLogicExpression(P));");
                     break;
                 case 1: // kiem chung suy luan
-                    String[] strs = input.Split(new string[] { "SPLIT" }, StringSplitOptions.None);
-                    writer.WriteLine("P := " + strs[0] + " ;");
+                    string[] strs = input.Split(new string[] { "SPLIT" }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] hypos = strs[0].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                    string h = "";
+                    foreach (string s in hypos)
+                    {
+                        h += ("(" + s + ") &and");
+                    }
+                    h = h.Remove(h.Length - 4);
+                    writer.WriteLine("P := " + h + " ;");
                     writer.WriteLine("Q := " + strs[1] + " ;");
-                    writer.WriteLine("ExportResult2(P, Q, Implies(P, Q));");
+                    writer.WriteLine("T := EvaluateReasoning(P, Q);");
+                    writer.WriteLine("ExportResult2(P, Q, T[1], T[2]);");
                     break;
                 case 2: // rut gon ham bool
                     input += inputTextBox3.Text;
@@ -174,6 +175,10 @@ namespace LogicSolver
         private void MainForm_Load(object sender, EventArgs e)
         {
             document = beginDoc;
+            andButton.Text = "\u2227\r\n&&and";
+            orButton.Text = "\u2228\r\n&&or";
+            notButton.Text = "\u00ac\r\n&&not";
+            impliesButton.Text = "\u2192\r\n&&implies";
         }
 
         private void solveButton_Click(object sender, EventArgs e)
@@ -189,14 +194,17 @@ namespace LogicSolver
             switch (tabControl.SelectedIndex)
             {
                 case 0: // rut gon bieu thuc logic
+                    if (inputTextBox1.Text == "") { waitingLabel.Visible = false; return; }
                     input += inputTextBox1.Text;
                     break;
                 case 1: // kiem chung suy luan
+                    if (inputTextBox2a.Text == "" || inputTextBox2b.Text == "") { waitingLabel.Visible = false; return; }
                     input += inputTextBox2a.Text;
                     input += "SPLIT";
                     input += inputTextBox2b.Text;
                     break;
                 case 2: // rut gon ham bool
+                    if (inputTextBox3.Text == "") { waitingLabel.Visible = false; return; }
                     input += inputTextBox3.Text;
                     break;
             }

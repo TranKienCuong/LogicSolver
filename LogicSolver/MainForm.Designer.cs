@@ -33,6 +33,9 @@
             this.inputTextBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.inputTextBox2b = new System.Windows.Forms.TextBox();
             this.inputTextBox2a = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -51,9 +54,8 @@
             this.notButton = new System.Windows.Forms.Button();
             this.impliesButton = new System.Windows.Forms.Button();
             this.waitingLabel = new System.Windows.Forms.Label();
-            this.inputTextBox2b = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -66,7 +68,7 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(49, 64);
+            this.tabControl.Location = new System.Drawing.Point(35, 64);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -75,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.inputTextBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
@@ -105,6 +108,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.inputTextBox2b);
@@ -119,9 +123,35 @@
             this.tabPage2.Text = "Kiểm chứng suy luận";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(78, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 25);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Kết luận:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(78, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Giả thiết:";
+            // 
+            // inputTextBox2b
+            // 
+            this.inputTextBox2b.Location = new System.Drawing.Point(173, 72);
+            this.inputTextBox2b.Name = "inputTextBox2b";
+            this.inputTextBox2b.Size = new System.Drawing.Size(656, 30);
+            this.inputTextBox2b.TabIndex = 11;
+            this.inputTextBox2b.Enter += new System.EventHandler(this.textBox_Enter);
+            // 
             // inputTextBox2a
             // 
-            this.inputTextBox2a.Location = new System.Drawing.Point(173, 19);
+            this.inputTextBox2a.Location = new System.Drawing.Point(173, 9);
             this.inputTextBox2a.Name = "inputTextBox2a";
             this.inputTextBox2a.Size = new System.Drawing.Size(656, 30);
             this.inputTextBox2a.TabIndex = 10;
@@ -130,7 +160,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 24);
+            this.label8.Location = new System.Drawing.Point(3, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 25);
             this.label8.TabIndex = 9;
@@ -143,7 +173,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(809, 75);
+            this.tabPage3.Size = new System.Drawing.Size(850, 112);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rút gọn hàm bool";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -238,9 +268,9 @@
             // 
             // andButton
             // 
-            this.andButton.Location = new System.Drawing.Point(571, 12);
+            this.andButton.Location = new System.Drawing.Point(607, 12);
             this.andButton.Name = "andButton";
-            this.andButton.Size = new System.Drawing.Size(83, 48);
+            this.andButton.Size = new System.Drawing.Size(83, 62);
             this.andButton.TabIndex = 2;
             this.andButton.Text = "and";
             this.andButton.UseVisualStyleBackColor = true;
@@ -249,7 +279,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(466, 24);
+            this.label3.Location = new System.Drawing.Point(503, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 25);
             this.label3.TabIndex = 3;
@@ -257,9 +287,9 @@
             // 
             // orButton
             // 
-            this.orButton.Location = new System.Drawing.Point(660, 12);
+            this.orButton.Location = new System.Drawing.Point(696, 12);
             this.orButton.Name = "orButton";
-            this.orButton.Size = new System.Drawing.Size(83, 48);
+            this.orButton.Size = new System.Drawing.Size(83, 62);
             this.orButton.TabIndex = 4;
             this.orButton.Text = "or";
             this.orButton.UseVisualStyleBackColor = true;
@@ -267,9 +297,9 @@
             // 
             // notButton
             // 
-            this.notButton.Location = new System.Drawing.Point(749, 12);
+            this.notButton.Location = new System.Drawing.Point(785, 12);
             this.notButton.Name = "notButton";
-            this.notButton.Size = new System.Drawing.Size(83, 48);
+            this.notButton.Size = new System.Drawing.Size(83, 62);
             this.notButton.TabIndex = 5;
             this.notButton.Text = "not";
             this.notButton.UseVisualStyleBackColor = true;
@@ -277,9 +307,9 @@
             // 
             // impliesButton
             // 
-            this.impliesButton.Location = new System.Drawing.Point(838, 12);
+            this.impliesButton.Location = new System.Drawing.Point(874, 12);
             this.impliesButton.Name = "impliesButton";
-            this.impliesButton.Size = new System.Drawing.Size(83, 48);
+            this.impliesButton.Size = new System.Drawing.Size(93, 62);
             this.impliesButton.TabIndex = 6;
             this.impliesButton.Text = "implies";
             this.impliesButton.UseVisualStyleBackColor = true;
@@ -295,30 +325,28 @@
             this.waitingLabel.Text = "Đang tính...";
             this.waitingLabel.Visible = false;
             // 
-            // inputTextBox2b
+            // label7
             // 
-            this.inputTextBox2b.Location = new System.Drawing.Point(173, 64);
-            this.inputTextBox2b.Name = "inputTextBox2b";
-            this.inputTextBox2b.Size = new System.Drawing.Size(656, 30);
-            this.inputTextBox2b.TabIndex = 11;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(102, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(713, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Gõ &and, &or, &not, &implies cho các phép toán hoặc sử dụng các phím tắt ở trên";
+            this.label7.UseMnemonic = false;
             // 
-            // label5
+            // label9
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(84, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 25);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Giả thiết:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(77, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 25);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Kết luận:";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(169, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(409, 22);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Giả thiết cách nhau bởi dấu phẩy hoặc phép &&and";
             // 
             // MainForm
             // 
@@ -387,5 +415,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox inputTextBox2b;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
     }
 }
