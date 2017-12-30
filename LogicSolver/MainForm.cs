@@ -50,17 +50,21 @@ namespace LogicSolver
 
         public string Solve(string input, int type)
         {
-            writer = File.CreateText("input.mpl");
-            writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
-            writer.WriteLine("march('open', packageDir):");
-            writer.WriteLine("with(Logic);");
             switch (type)
             {
                 case 0: // rut gon bieu thuc logic
+                    writer = File.CreateText("input.mpl");
+                    writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
+                    writer.WriteLine("march('open', packageDir):");
+                    writer.WriteLine("with(Logic);");
                     writer.WriteLine("P := " + input + ";");
                     writer.WriteLine("ExportResult(P, BooleanSimplify(P), SimplifyLogicExpression(P));");
                     break;
                 case 1: // kiem chung suy luan
+                    writer = File.CreateText("input.mpl");
+                    writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"DoAn.mla\"):");
+                    writer.WriteLine("march('open', packageDir):");
+                    writer.WriteLine("with(Logic);");
                     string[] strs = input.Split(new string[] { "SPLIT" }, StringSplitOptions.RemoveEmptyEntries);
                     string[] hypos = strs[0].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                     string h = "";
@@ -75,7 +79,14 @@ namespace LogicSolver
                     writer.WriteLine("ExportResult2(P, Q, T[1], T[2]);");
                     break;
                 case 2: // rut gon ham bool
-                    input += inputTextBox3.Text;
+                    writer = File.CreateText("input.mpl");
+                    writer.WriteLine("packageDir:= cat(currentdir(), kernelopts(dirsep) , \"Minimize_Boolean_Expression.mla\"):");
+                    writer.WriteLine("march('open', packageDir):");
+                    writer.WriteLine("with(StringTools):");
+                    writer.WriteLine("with(combinat, choose):");
+                    writer.WriteLine("with(Minimize_Boolean_Expression):");
+                    writer.WriteLine("P := \"" + input + "\";");
+                    writer.WriteLine("minbool(P,true);");
                     break;
             }
             writer.Close();
@@ -179,6 +190,13 @@ namespace LogicSolver
             orButton.Text = "\u2228\r\n&&or";
             notButton.Text = "\u00ac\r\n&&not";
             impliesButton.Text = "\u2192\r\n&&implies";
+            /*if (tabControl.SelectedIndex == 2)
+            {
+                andButton.Hide();
+                orButton.Hide();
+                notButton.Hide();
+                impliesButton.Hide();
+            }*/
         }
 
         private void solveButton_Click(object sender, EventArgs e)
@@ -210,10 +228,9 @@ namespace LogicSolver
             }
             string text = Solve(input, tabControl.SelectedIndex);
             DisplayText(text);
-
             waitingLabel.Visible = false;
         }
-
+        //A'S'D + A'SD + AS'D' + AS'
         private void previousButton_Click(object sender, EventArgs e)
         {
             if (imageIndex > 0)
